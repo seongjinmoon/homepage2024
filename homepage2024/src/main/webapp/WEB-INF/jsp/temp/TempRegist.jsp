@@ -24,7 +24,7 @@
 * 등록폼
 <%-- <form action="${actionUrl}" method="post" name="tempVO"> --%>
 <form action="/temp/insert.do" method="post" name="tempVO">
-	<%-- <input type="hidden" name="tempId" value="${result.tempId}"/> --%>
+	<input type="hidden" name="tempId" value="${result.tempId}"/>
 	<label for="tempVal">값 정보 : </label> 
 	<input type="text" id="tempVal" name="tempVal" value="${result.tempVal}"/>
 	<br/>

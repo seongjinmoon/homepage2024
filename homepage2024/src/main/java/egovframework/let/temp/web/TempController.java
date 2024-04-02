@@ -38,6 +38,9 @@ public class TempController {
 		List<EgovMap> resultList = tempService.selectTempList(tempVO);
 		model.addAttribute("resultList", resultList);
 		
+		int totCnt = tempService.selectTempListCnt(tempVO);
+		model.addAttribute("totCnt", totCnt);
+		
 		/*
 		//2차 - 페이징 작업 시
 		PaginationInfo paginationInfo = new PaginationInfo();
@@ -60,18 +63,18 @@ public class TempController {
 		*/
 		return "temp/TempSelectList";
 	}
-	/*
+	
 	//임시데이터 등록/수정
 	@RequestMapping(value = "/temp/tempRegist.do")
 	public String tempRegist(TempVO tempVO, HttpServletRequest request, ModelMap model) throws Exception{
-		/* 수정할 때 오픈하기 
+		/* 수정할 때 오픈하기 */
 		TempVO result = new TempVO();
 		if(!EgovStringUtil.isEmpty(tempVO.getTempId())) {
 			result = tempService.selectTemp(tempVO);
 		}
 		
 		model.addAttribute("result", result);
-		*  /
+		
 		return "temp/TempRegist";
 	}
 	
@@ -80,7 +83,6 @@ public class TempController {
 	public String insert(TempVO tempVO, HttpServletRequest request) throws Exception{
 		tempService.insertTemp(tempVO);
 		
-		//String tempId = tempService.insertTemp(searchVO);
 		return "forward:/temp/selectList.do";
 	}
 	
@@ -111,5 +113,5 @@ public class TempController {
 		
 		return "/temp/JstlImport";
 	}
-	*/
+	
 }

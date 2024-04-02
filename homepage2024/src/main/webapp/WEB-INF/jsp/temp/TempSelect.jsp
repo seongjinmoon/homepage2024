@@ -8,10 +8,11 @@
 <head>
 <meta http-equiv="Content-Language" content="ko" >
 <title>데이터 가져오기~</title>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
 ${result.tempId} : ${result.tempVal}
-<%-- 
+
 <div class="box-btn">
 	<c:url var="uptUrl" value="/temp/tempRegist.do">
 		<c:param name="tempId" value="${result.tempId}"/>
@@ -25,6 +26,7 @@ ${result.tempId} : ${result.tempVal}
 	
 	<a href="/temp/selectList.do">목록</a>
 </div>
+
 <script>
 $(document).ready(function(){
 	$(".btn-del").click(function(){
@@ -34,7 +36,7 @@ $(document).ready(function(){
 	});
 });
 </script>
- --%>
+
 </body>
 </html>
 

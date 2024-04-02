@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="TempDAO">
+<mapper namespace="tempDAO">
 
 
 	<resultMap id="temp" type="egovframework.let.temp.service.TempVO">
@@ -9,15 +9,15 @@
 	</resultMap>
 	
 	<!-- <select id="selectTemp" resultType="tempVO"> -->
-	<select id="TempDAO.selectTemp" resultType="egovframework.let.temp.service.TempVO">
+	<select id="tempDAO.selectTemp" resultMap="temp">
 		SELECT
-		  TEMP_ID AS TempId
-		  , TEMP_VAL AS TempVal
+		  TEMP_ID
+		  , TEMP_VAL
 		FROM lettemp
 		WHERE TEMP_ID = #{tempId}
 	</select>
 	
-	<select id="TempDAO.selectTempList" resultType="egovMap">
+	<select id="tempDAO.selectTempList" resultType="egovMap">
 		SELECT
 		  TEMP_ID
 		  , TEMP_VAL
@@ -26,13 +26,13 @@
 		<!-- LIMIT #{recordCountPerPage} OFFSET #{firstIndex} -->
 	</select>
 	
-	<select id="TempDAO.selectTempListCnt" resultType="java.lang.Integer">
+	<select id="tempDAO.selectTempListCnt" resultType="java.lang.Integer">
 		SELECT
 		  COUNT(*) CNT
 		FROM lettemp
 	</select>
 	
-	<insert id="TempDAO.insertTemp" parameterType="egovframework.let.temp.service.TempVO">
+	<insert id="tempDAO.insertTemp" parameterType="egovframework.let.temp.service.TempVO">
 		INSERT INTO lettemp (
 			TEMP_VAL
 		) VALUES (
@@ -40,13 +40,13 @@
 		)
 	</insert>
 	
-	<update id="TempDAO.updateTemp" parameterType="egovframework.let.temp.service.TempVO">
+	<update id="tempDAO.updateTemp" parameterType="egovframework.let.temp.service.TempVO">
 		UPDATE lettemp SET
 			TEMP_VAL = #{tempVal}
 		WHERE TEMP_ID = #{tempId}
 	</update>
 	
-	<delete id="TempDAO.deleteTemp" parameterType="egovframework.let.temp.service.TempVO">
+	<delete id="tempDAO.deleteTemp" parameterType="egovframework.let.temp.service.TempVO">
 		DELETE FROM lettemp
 		WHERE TEMP_ID = #{tempId}
 	</delete>

@@ -8,8 +8,7 @@
 <head>
 <meta http-equiv="Content-Language" content="ko" >
 <title>데이터 가져오기~</title>
-<link href="/css/common.css" rel="stylesheet" type="text/css">
-<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-latest.min.js"></script> -->
 <style>
 table{border-collapse: collapse;}
 th{font-weight:bold;}
@@ -29,13 +28,15 @@ th, td{padding:5px;border:1px solid #000;}
 		<c:forEach var="result" items="${resultList }">
 			<tr>
 				<td><c:out value="${result.tempId}"/></td>
-				<%-- <td><c:out value="${result.tempVal}"/></td> --%>
+				<td><c:out value="${result.tempVal}"/></td>
+				
 				<td>
 					<c:url var="viewUrl" value="/temp/select.do">
 						<c:param name="tempId" value="${result.tempId}"/>
 					</c:url>
 					<a href="${viewUrl}"><c:out value="${result.tempVal}"/></a>
 				</td>
+				
 			</tr>
 		</c:forEach>
 	</tbody>
@@ -48,18 +49,10 @@ th, td{padding:5px;border:1px solid #000;}
 	   <ui:pagination paginationInfo="${paginationInfo}" type="image" jsFunction="${pagingParam}" />
 	</ul>
 </div>
+--%>
 
-<button type="button" id="btn-reg" data-href="/temp/tempRegist.do">등록하기</button>
+<a href="/temp/tempRegist.do">등록하기</a>
 
-<script>
-$(document).ready(function(){
-	//등록하기
-	$("#btn-reg").click(function(){
-		location.href = $(this).data("href");
-	});
-});
-</script>
- --%>
 </body>
 </html>
 
