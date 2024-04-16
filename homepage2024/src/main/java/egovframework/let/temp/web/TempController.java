@@ -10,6 +10,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.egovframe.rte.psl.dataaccess.util.EgovMap;
+import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -35,6 +36,7 @@ public class TempController {
 	@RequestMapping(value = "/temp/selectList.do")
 	public String selectList(TempVO tempVO,  HttpServletRequest request, ModelMap model) throws Exception{
 		//1차
+		
 		List<EgovMap> resultList = tempService.selectTempList(tempVO);
 		model.addAttribute("resultList", resultList);
 		
