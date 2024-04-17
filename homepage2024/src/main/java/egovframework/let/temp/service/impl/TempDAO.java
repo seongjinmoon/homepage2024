@@ -37,7 +37,7 @@ public class TempDAO extends EgovAbstractMapper {
     	delete("tempDAO.deleteTemp", vo);
     }
 	
-    //임시데이터 가져오기
+    //임시데이터 목록 수
     public int selectTempListCnt(TempVO vo) throws Exception {
     	return selectOne("tempDAO.selectTempListCnt", vo);
     }
