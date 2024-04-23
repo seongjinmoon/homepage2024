@@ -40,4 +40,5 @@ public class Temp2DAO extends EgovAbstractMapper {
     public int selectTempListCnt(TempVO vo) throws Exception {
     	return selectOne("temp2DAO.selectTempListCnt", vo);
     }
+    
 }
