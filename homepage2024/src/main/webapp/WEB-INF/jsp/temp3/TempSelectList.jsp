@@ -24,6 +24,7 @@ a{text-decoration:underline;margin:5px;}
 		<tr>
 			<th>TEMP_ID</th>
 			<th>TEMP_VAL</th>
+			<th>관리</th>
 		</tr>
 	</thead>
 	<tbody>
