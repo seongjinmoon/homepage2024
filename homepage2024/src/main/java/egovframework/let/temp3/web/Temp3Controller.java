@@ -26,6 +26,7 @@ public class Temp3Controller {
 	//임시데이터 목록 가져오기
 	@RequestMapping(value = "/temp3/selectList.do")
 	public String selectList(Temp3VO temp3VO,  HttpServletRequest request, ModelMap model) throws Exception{
+		/* 2차
 		PaginationInfo paginationInfo = new PaginationInfo();
 
 		paginationInfo.setCurrentPageNo(temp3VO.getPageIndex());
@@ -43,6 +44,14 @@ public class Temp3Controller {
 		
 		paginationInfo.setTotalRecordCount(totCnt);
 		model.addAttribute("paginationInfo", paginationInfo);
+		*/
+		
+		/* 1차 */
+		List<EgovMap> resultList = temp3Service.selectTempList(temp3VO);
+		model.addAttribute("resultList", resultList);
+		
+		int totCnt = temp3Service.selectTempListCnt(temp3VO);
+		model.addAttribute("totCnt", totCnt);
 		
 		return "temp3/TempSelectList";
 	}

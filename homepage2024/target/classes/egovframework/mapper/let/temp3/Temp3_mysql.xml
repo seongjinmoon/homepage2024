@@ -13,7 +13,7 @@
 		  , TEMP_VAL
 		FROM lettemp3
 		ORDER BY TEMP_ID DESC
-		LIMIT #{recordCountPerPage} OFFSET #{firstIndex}
+		<!-- LIMIT #{recordCountPerPage} OFFSET #{firstIndex} -->
 	</select>
 	
 	<select id="temp3DAO.selectTempListCnt" resultType="java.lang.Integer">

@@ -47,7 +47,7 @@ a{text-decoration:underline;margin:5px;}
 		</c:forEach>
 	</tbody>
 </table>
-
+<%-- 
 <div id="paging_div">
 	<ul class="paging_align">
 		<c:url var="pageUrl" value="/temp3/selectList.do?"/>
@@ -55,7 +55,7 @@ a{text-decoration:underline;margin:5px;}
 	   <ui:pagination paginationInfo="${paginationInfo}" type="image" jsFunction="${pagingParam}" />
 	</ul>
 </div>
-
+ --%>
 <button type="button" id="btn-reg" data-href="/temp3/tempRegist.do">등록하기</button>
 <script>
 $(document).ready(function(){
