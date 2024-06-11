@@ -8,15 +8,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Language" content="ko" >
+<meta http-equiv="Content-Language" content="ko" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <title><c:out value="${param.title}"/></title>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
-<!-- BBS Style -->
+<!-- BBS Style '0' 12개-->
 <link href="/asset/BBSTMP_0000000000001/style.css" rel="stylesheet" />
-<!-- 공통 Style -->
+<!-- 공통 Style '0' 13개-->
 <link href="/asset/LYTTMP_0000000000000/style.css" rel="stylesheet" />
 <link href="/asset/TYPETMP_02/style.css" rel="stylesheet" />
 

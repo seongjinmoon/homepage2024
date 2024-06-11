@@ -13,6 +13,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <title>수업용 게시판</title>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<!-- 
 <script src="https://cdn.tiny.cloud/1/2xpj4d22abg4qy6hhumahoojfub87knrquwrq4mbmjj9saoo/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
 $(function(){
@@ -89,6 +90,7 @@ $(function(){
     });
 });
 </script>
+ -->
 </head>
 <body>
 
@@ -128,7 +130,7 @@ $(function(){
 
 <div class="container">
 	<div id="contents">
-		<form action="${actionUrl}" method="post" id="frm" name="frm" onsubmit="return regist()" enctype="multipart/form-data"> 
+		<form action="${actionUrl}" method="post" id="frm" name="frm" onsubmit="return regist()" <%-- enctype="multipart/form-data" --%>> 
 			<input type="hidden" name="boardId" value="${result.boardId}"/>
 			<%-- 첨부파일 삭제 때문에 returnUrl존재 --%>
 			<input type="hidden" name="returnUrl" value="/board/boardRegist.do"/>
@@ -181,7 +183,7 @@ $(function(){
 		                    <textarea id="boardCn" name="boardCn" rows="15" title="내용입력"><c:out value="${result.boardCn}"/></textarea>
 		                </td>
 		            </tr>
-		            
+		            <%-- 
 		            <c:if test="${not empty result.atchFileId}">
 			            <tr>
 			                <th scope="row">기존<br/>첨부파일목록</th>
@@ -201,6 +203,7 @@ $(function(){
 		                    <input type="file" name="file_2"/>
 		                </td>
 		            </tr>
+		            --%>
 		        </tbody>
 		    </table>
 			<div class="btn-cont ar">
