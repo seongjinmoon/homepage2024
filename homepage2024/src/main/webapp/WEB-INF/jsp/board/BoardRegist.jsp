@@ -40,13 +40,13 @@
 
 <div class="container">
 	<div id="contents">
-		<form action="${actionUrl}" method="post" id="frm" name="frm" onsubmit="return regist()" <%-- enctype="multipart/form-data" --%>> 
+		<form action="${actionUrl}" method="post" id="frm" name="frm" onsubmit="return regist()" enctype="multipart/form-data"> 
 			<input type="hidden" name="boardId" value="${result.boardId}"/>
 			<%-- 첨부파일 삭제 때문에 returnUrl존재 --%>
 			<input type="hidden" name="returnUrl" value="/board/boardRegist.do"/>
 			
 			<%-- 게시판 타입 --%>
-			<input type="hidden" name="boardType" value="${searchVO.boardType}"/>
+			<%-- <input type="hidden" name="boardType" value="${searchVO.boardType}"/> --%>
 			
 			<table class="chart2">
 		        <caption>게시글 작성</caption>
@@ -93,7 +93,7 @@
 		                    <textarea id="boardCn" name="boardCn" rows="15" title="내용입력"><c:out value="${result.boardCn}"/></textarea>
 		                </td>
 		            </tr>
-		            <%-- 
+		            
 		            <c:if test="${not empty result.atchFileId}">
 			            <tr>
 			                <th scope="row">기존<br/>첨부파일목록</th>
@@ -113,7 +113,7 @@
 		                    <input type="file" name="file_2"/>
 		                </td>
 		            </tr>
-		            --%>
+		            
 		        </tbody>
 		    </table>
 			<div class="btn-cont ar">
@@ -164,8 +164,7 @@ function regist(){
 }
 </script>
 
-
-<script src="https://cdn.tiny.cloud/1/2xpj4d22abg4qy6hhumahoojfub87knrquwrq4mbmjj9saoo/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/xg9uuf6dha0abv164r3ngodmfu0p9vzo66mbdo8vtuiooqr9/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
 $(function(){
     var plugins = [
@@ -182,7 +181,7 @@ $(function(){
                + ' link image';
 
     tinymce.init({
-    	language: "ko_KR", //한글판으로 변경
+    language: "ko_KR", //한글판으로 변경
         selector: '#boardCn',
         height: 500,
         menubar: false,

@@ -29,6 +29,7 @@ public class EgovAtchFileIdPropertyEditor extends PropertyEditorSupport {
 	private static final Logger LOGGER = LoggerFactory.getLogger(EgovAtchFileIdPropertyEditor.class);
 		
 		public void setAsText(String text) throws IllegalArgumentException {
+			/*
 			LOGGER.debug("===>>> setText : "+text);
 			String decryptText = "";
 			if (text != null && !"".equals(text) ) {
@@ -40,7 +41,8 @@ public class EgovAtchFileIdPropertyEditor extends PropertyEditorSupport {
 				}
 			}
 			this.setValue(decryptText);
-	
+			*/
+			this.setValue(text);
 		}
 	
 	
