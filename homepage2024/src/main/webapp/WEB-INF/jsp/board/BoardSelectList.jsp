@@ -10,7 +10,7 @@
 </c:import>
 
 
-<%-- 게시판 타입 
+<%-- 게시판 타입  --%>
 <c:set var="boardType">
 <c:choose>
 	<c:when test="${not empty searchVO.boardType}">
@@ -21,11 +21,11 @@
 	</c:otherwise>
 </c:choose>
 </c:set>
---%>
+
 
 <%-- 기본 URL --%>
 <c:url var="_BASE_PARAM" value="">
-	<%-- <c:param name="boardType" value="${boardType}" /> --%>
+	<c:param name="boardType" value="${boardType}" />
   	<c:if test="${not empty searchVO.searchCondition}"><c:param name="searchCondition" value="${searchVO.searchCondition}" /></c:if>
   	<c:if test="${not empty searchVO.searchKeyword}"><c:param name="searchKeyword" value="${searchVO.searchKeyword}" /></c:if>
 </c:url>
@@ -52,7 +52,7 @@
 	    </div>
 	    
 	     
-	    <%-- 목록영역 --%>
+	    <%-- 목록영역 -- %>
 		<div id="bbs_wrap">
 			<div class="total">
 				총 게시물 
@@ -73,7 +73,7 @@
 	                  </tr>
 	              </thead>
 	              <tbody>
-					<%-- 공지 글 --%>
+					<%-- 공지 글 -- %>
 					 <c:forEach var="result" items="${noticeResultList}" varStatus="status">
 						<tr class="notice">
 							<td class="num"><span class="label-bbs spot">공지</span></td>
@@ -90,7 +90,7 @@
 						</tr>
 					  	</c:forEach>
 	                  
-	                  	<%-- 일반 글 --%>
+	                  	<%-- 일반 글 -- %>
 	                  	<c:forEach var="result" items="${resultList}" varStatus="status">
 							<tr>
 								<td class="num"><c:out value="${paginationInfo.totalRecordCount - ((searchVO.pageIndex-1) * searchVO.pageUnit) - (status.count - 1)}" /></td>
@@ -112,14 +112,23 @@
 							</tr>
 					  	</c:forEach>
 					  
-					  	<%-- 게시 글이 없을 경우 --%>
+					  	<%-- 게시 글이 없을 경우 -- %>
 					  	<c:if test="${fn:length(resultList) == 0}">
 							<tr class="empty"><td colspan="5">검색 데이터가 없습니다.</td></tr>
 				   	  	</c:if>
 	                </tbody>
 	            </table>
 	        </div>
-			<%-- 
+			--%>
+			
+		<div id="bbs_wrap">
+			<div class="total">
+				총 게시물 
+				<strong><c:out value="${paginationInfo.totalRecordCount}"/></strong>건 ㅣ 
+				현재페이지 <strong><c:out value="${paginationInfo.currentPageNo}"/></strong>/
+				<c:out value="${paginationInfo.totalPageCount}"/>
+			</div>	
+			
 	        <c:choose>
 	        	<c:when test="${searchVO.boardType eq 'IMAGE'}">
 	        		<div class="list_photo">
@@ -167,7 +176,7 @@
 				              	</li>
 				            </c:forEach>
 						</ul>
-						게시 글이 없을 경우
+						<!-- 게시 글이 없을 경우 -->
 						<c:if test="${fn:length(resultList) == 0}">
 							<table class="boardscn_list" ><tr><td><spring:message code="common.nodata.msg" /></td></tr></table>
 					    </c:if>
@@ -186,7 +195,7 @@
 			                  </tr>
 			              </thead>
 			              <tbody>
-							공지 글
+							<!-- 공지 글 -->
 							 <c:forEach var="result" items="${noticeResultList}" varStatus="status">
 								<tr class="notice">
 									<td class="num"><span class="label-bbs spot">공지</span></td>
@@ -203,7 +212,7 @@
 								</tr>
 							  	</c:forEach>
 			                  
-			                  	일반 글
+			                  	<!-- 일반 글 -->
 			                  	<c:forEach var="result" items="${resultList}" varStatus="status">
 									<tr>
 										<td class="num"><c:out value="${paginationInfo.totalRecordCount - ((searchVO.pageIndex-1) * searchVO.pageUnit) - (status.count - 1)}" /></td>
@@ -225,7 +234,7 @@
 									</tr>
 							  	</c:forEach>
 							  
-							  	게시 글이 없을 경우
+							  	<!-- 게시 글이 없을 경우 -->
 							  	<c:if test="${fn:length(resultList) == 0}">
 									<tr class="empty"><td colspan="5">검색 데이터가 없습니다.</td></tr>
 						   	  	</c:if>
@@ -234,7 +243,6 @@
 			        </div>
 	        	</c:otherwise>
 	        </c:choose>
-	         --%>
 	         
 		    <div id="paging">
 		    	<c:url var="pageUrl" value="/board/selectList.do${_BASE_PARAM}"/>

@@ -46,7 +46,7 @@
 			<input type="hidden" name="returnUrl" value="/board/boardRegist.do"/>
 			
 			<%-- 게시판 타입 --%>
-			<%-- <input type="hidden" name="boardType" value="${searchVO.boardType}"/> --%>
+			<input type="hidden" name="boardType" value="${searchVO.boardType}"/>
 			
 			<table class="chart2">
 		        <caption>게시글 작성</caption>

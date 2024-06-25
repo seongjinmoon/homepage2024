@@ -35,7 +35,7 @@ public class BoardDAO extends EgovAbstractMapper {
 	
     //게시물 수정하기
     public void updateBoard(BoardVO vo) throws Exception {
-    	insert("boardDAO.updateBoard", vo);
+    	update("boardDAO.updateBoard", vo);
     }
     
     //게시물 삭제하기

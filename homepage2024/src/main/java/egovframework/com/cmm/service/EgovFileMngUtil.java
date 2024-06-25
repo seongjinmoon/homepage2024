@@ -73,24 +73,27 @@ public class EgovFileMngUtil {
 	String storePathString = "";
 	String atchFileIdString = "";
 
+	//저장소 여부 - storePath
 	if ("".equals(storePath) || storePath == null) {
 	    storePathString = propertyService.getString("Globals.fileStorePath");
 	} else {
 	    storePathString = propertyService.getString(storePath);
 	}
-
+	
+	//등록인지 수정인지 여부 - atchFileId
 	if ("".equals(atchFileId) || atchFileId == null) {
 	    atchFileIdString = idgenService.getNextStringId();
 	} else {
 	    atchFileIdString = atchFileId;
 	}
-
+	
+	//경로설정
 	File saveFolder = new File(EgovWebUtil.filePathBlackList(storePathString));
 
 	if (!saveFolder.exists() || saveFolder.isFile()) {
 	    saveFolder.mkdirs();
 	}
-
+	
 	Iterator<Entry<String, MultipartFile>> itr = files.entrySet().iterator();
 	MultipartFile file;
 	String filePath = "";
@@ -101,6 +104,7 @@ public class EgovFileMngUtil {
 	    Entry<String, MultipartFile> entry = itr.next();
 
 	    file = entry.getValue();
+	    //원본명
 	    String orginFileName = file.getOriginalFilename();
 
 	    //--------------------------------------
@@ -114,8 +118,14 @@ public class EgovFileMngUtil {
 
 	    int index = orginFileName.lastIndexOf(".");
 	    //String fileName = orginFileName.substring(0, index);
+	    
+	    //확장자 추출
 	    String fileExt = orginFileName.substring(index + 1);
+	    
+	    //저장되는 파일명
 	    String newName = KeyStr + EgovStringUtil.getTimeStamp() + fileKey;
+	    
+	    //파일 사이즈
 	    long _size = file.getSize();
 
 	    if (!"".equals(orginFileName)) {

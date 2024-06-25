@@ -48,13 +48,13 @@ public class BoardController {
 		searchVO.setNoticeAt("Y");
 		List<EgovMap> noticeResultList = boardService.selectBoardList(searchVO);
 		model.addAttribute("noticeResultList", noticeResultList);
-		/*
+		
 		//이미지게시판일 경우
 		if("IMAGE".equals(searchVO.getBoardType())) {
 			searchVO.setPageUnit(propertyService.getInt("imagePageUnit"));
 			searchVO.setPageSize(propertyService.getInt("imagePageSize"));
 		}
-		*/
+		
 		PaginationInfo paginationInfo = new PaginationInfo();
 
 		paginationInfo.setCurrentPageNo(searchVO.getPageIndex());
