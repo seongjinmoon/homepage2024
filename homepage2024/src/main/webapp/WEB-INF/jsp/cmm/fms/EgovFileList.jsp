@@ -28,7 +28,6 @@ $(document).ready(function(){
 });
 </script>
 
-
 <input type="hidden" name="atchFileId" value="${atchFileId}">
 <input type="hidden" name="fileSn" >
 <input type="hidden" name="fileListCnt" value="${fileListCnt}">
@@ -40,7 +39,7 @@ $(document).ready(function(){
 					<i class="ico-file-down"></i>
 					<span><c:out value="${fileVO.orignlFileNm}"/></span>
 	  		       	<span><c:out value="${fileVO.fileMg}"/> byte</span>
-	  		       	<span class='del'>
+	  		       	<span class="del">
 	  		       		<a href="#" class="file-del" data-id="${fileVO.atchFileId}" data-sn="${fileVO.fileSn}">
 							<img src="/asset/BBSTMP_0000000000001/images/btn_sdelete.gif" alt="첨부된 파일 삭제">
 						</a>

@@ -169,7 +169,7 @@ public class EgovImageProcessController extends HttpServlet {
 		}
     }
     
-  //썸네일 가져오기
+    //썸네일 가져오기
     @RequestMapping("/cmm/fms/getThumbImage.do")
     public void getThumbImage(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws Exception {
     	//EgovStringUtil => egovframework.let.utl.fcc.service.EgovStringUtil
