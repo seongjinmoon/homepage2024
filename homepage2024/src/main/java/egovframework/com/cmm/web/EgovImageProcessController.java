@@ -195,6 +195,7 @@ public class EgovImageProcessController extends HttpServlet {
 			if(!file.exists()) {
 				File orgFile = new File(resFilePath, atchFileNm);
 				if(orgFile.exists()) {
+					
 					Thumbnails.of(orgFile).size(width, height).toFile(file);
 				}else {
 					LOGGER.info("File Not Found : " + resFilePath + File.separator + atchFileNm);

@@ -38,14 +38,14 @@
 				</div>
 			</div>
 		</article>
-		
+		<%-- 카카오 이미지는 전달해야 함
 		<article>
 			<h3 class="icon2 ico-user">SNS회원</h3>
 	        <div class="confirm_box">
 				<p class="mB20">카카오 회원</p>
 				<div class="btn-cont">
 					<a class="btn-kakao" href="#" data-type="join">
-						<img src="http://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg" width="150" alt="카카오 로그인 버튼"/>
+						<img src="/asset/front/images/common/btn-kakao.png" width="150" alt="카카오 로그인 버튼"/>
 					</a>
 				</div>
 			</div>
@@ -62,6 +62,7 @@
 				</div>
 			</div>
 		</article>
+		 --%>
 	</div>
 </form>
 
