@@ -16,6 +16,13 @@
 
 <c:choose>
 	<c:when test="${not empty param.css}">
+		<c:if test="${param.commonCssUseAt eq 'Y'}">
+			<!-- BBS Style '0' 12개-->
+			<link href="/asset/BBSTMP_0000000000001/style.css" rel="stylesheet" />
+			<!-- 공통 Style '0' 13개-->
+			<link href="/asset/LYTTMP_0000000000000/style.css" rel="stylesheet" />
+			<link href="/asset/TYPETMP_02/style.css" rel="stylesheet" />
+		</c:if>
 		<link href="${param.css}" rel="stylesheet" />
 	</c:when>
 	<c:otherwise>
@@ -38,17 +45,18 @@
 	                <li><a href="/">HOME</a></li>
 	                <c:choose>
 						<c:when test="${empty USER_INFO.id}">
-							<li><a href="/uat/uia/egovLoginUsr.do">로그인</a></li>
+							<li><a href="/login/login.do">로그인</a></li>
 							<li><a href="/join/siteUseAgree.do">회원가입</a></li>
 						</c:when>
 						<c:otherwise>
 							<li><strong><c:out value="${USER_INFO.name}"/></strong>님 환영합니다</li>
-							<li><a href="/uat/uia/actionLogout.do">로그아웃</a></li>	
+							<li><a href="/login/actionLogout.do">로그아웃</a></li>	
 						</c:otherwise>
 					</c:choose>
 	            </ul>
 	        </div>
 	    </div>
+	    
 	    <div class="header-cont wrap">
 	        <nav class="site-gnb">
 	        	<ul>
