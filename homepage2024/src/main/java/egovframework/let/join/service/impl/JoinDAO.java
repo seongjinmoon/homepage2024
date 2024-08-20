@@ -8,15 +8,14 @@ import egovframework.let.join.service.JoinVO;
 @Repository("joinDAO")
 public class JoinDAO extends EgovAbstractMapper {
 	
-	//회원등록
-    public void insertJoin(JoinVO vo) throws Exception {
-    	insert("joinDAO.insertJoin", vo);
-    }
-    
-    //ID중복체크
+	//ID중복체크
     public int duplicateCheck(JoinVO vo) throws Exception {
     	return selectOne("joinDAO.duplicateCheck", vo);
     }
     
+	//회원등록
+    public void insertJoin(JoinVO vo) throws Exception {
+    	insert("joinDAO.insertJoin", vo);
+    }
 		
 }

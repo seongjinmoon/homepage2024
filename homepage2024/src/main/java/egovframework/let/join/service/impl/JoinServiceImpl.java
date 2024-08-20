@@ -23,7 +23,11 @@ public class JoinServiceImpl extends EgovAbstractServiceImpl implements JoinServ
     @Resource(name = "joinIdGnrService")
     private EgovIdGnrService idgenService;
     
-    
+    //ID중복체크
+  	public int duplicateCheck(JoinVO vo) throws Exception {
+  		return joinDAO.duplicateCheck(vo);
+  	}
+  	
     //회원등록
 	public String insertJoin(JoinVO vo) throws Exception {
     	String esntlId = idgenService.getNextStringId();
@@ -42,10 +46,7 @@ public class JoinServiceImpl extends EgovAbstractServiceImpl implements JoinServ
 		return esntlId;
 	}
     
-    //ID중복체크
-	public int duplicateCheck(JoinVO vo) throws Exception {
-		return joinDAO.duplicateCheck(vo);
-	}
+    
 
 		
 }
