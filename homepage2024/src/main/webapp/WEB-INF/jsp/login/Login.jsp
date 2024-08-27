@@ -32,7 +32,7 @@
 							</span>
 							
                             <button type="submit" class="btn-lg spot p10">로그인</button>
-                            <%-- 
+                            
                             <div class="btn-cont">
 								<a class="btn-kakao" href="#" data-type="login">
 									<img src="http://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg" width="200" alt="카카오 로그인 버튼"/>
@@ -41,7 +41,7 @@
 									<img src="/asset/front/images/common/btn-naver.png" width="180" alt="네이버 로그인 버튼"/>
 								</a>
 							</div>
-							 --%>
+							 
 						</fieldset>
 					</form>
 				</div>
@@ -89,8 +89,6 @@ $(document).ready(function(){
 
 </script>
 
-<%-- form구조 다 바뀜 emplyrId => id로 변경 등 --%>
-<%-- 
 <form id="frmLogin" name="frmLogin" method="post" action="/login/actionLogin.do">
 	<input type="hidden" name="loginType" value=""/>
 	<input type="hidden" id="snsId" name="id"/>
@@ -108,7 +106,7 @@ $(document).ready(function(){
 });
 
 //카카오 키 정보 입력
-Kakao.init('2b7dd86a5c5b0e1a49c9c8ee866e8d76');
+Kakao.init('8f13bd8d5c0ffc4e3d6e22dba0a3c7b8');
 
 //카카오SDK 초기화
 Kakao.isInitialized();
@@ -135,5 +133,5 @@ function kakaoLogin(type) {
     })
 }
 </script>
- --%>
+ 
 <c:import url="/template/footer.do" charEncoding="utf-8"/>

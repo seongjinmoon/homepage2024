@@ -38,7 +38,7 @@
 				</div>
 			</div>
 		</article>
-		<%-- 카카오 이미지는 전달해야 함
+		
 		<article>
 			<h3 class="icon2 ico-user">SNS회원</h3>
 	        <div class="confirm_box">
@@ -62,7 +62,7 @@
 				</div>
 			</div>
 		</article>
-		 --%>
+		 
 	</div>
 </form>
 
@@ -75,7 +75,7 @@ $(document).ready(function(){
 	});
 });
 </script>
-<%-- 
+
 <form id="joinFrm" name="joinFrm" method="post" action="/join/insertMember.do">
 	<input type="hidden" name="loginType" value=""/>
 	<input type="hidden" name="emplyrId"/>
@@ -95,7 +95,7 @@ $(document).ready(function(){
 });
 
 //카카오 키 정보 입력
-Kakao.init('2b7dd86a5c5b0e1a49c9c8ee866e8d76');
+Kakao.init('8f13bd8d5c0ffc4e3d6e22dba0a3c7b8');
 
 //카카오SDK 초기화
 Kakao.isInitialized();
@@ -111,7 +111,7 @@ function kakaoLogin(type) {
 					$("input[name=loginType]").val("KAKAO");
 					$("input[name=emplyrId]").val(response.id);
 					$("input[name=userNm]").val(response.properties.nickname);
-					$("input[name=emailAdres]").val(response.kakao_account.email);
+					//$("input[name=emailAdres]").val(response.kakao_account.email);
 					$("#joinFrm").submit();
 				},
           		fail: function (error) {
@@ -132,5 +132,5 @@ function kakaoLogin(type) {
 	alert("${loginMessage}");
 </c:if>
 </script>
- --%>
+ 
 <c:import url="/template/footer.do" charEncoding="utf-8"/>

@@ -1,6 +1,7 @@
 package egovframework.let.join.web;
 
 import egovframework.com.cmm.EgovMessageSource;
+import egovframework.let.api.naver.service.NaverLoginService;
 import egovframework.let.join.service.JoinService;
 import egovframework.let.join.service.JoinVO;
 import egovframework.let.utl.fcc.service.EgovStringUtil;
@@ -24,10 +25,10 @@ public class JoinController {
 
 	@Resource(name = "joinService")
     private JoinService joinService;
-	/*
+	
 	@Resource(name = "naverLoginService")
     private NaverLoginService naverLoginService;
-	*/
+	
 	@Resource(name = "egovMessageSource")
 	EgovMessageSource egovMessageSource;
 	
@@ -46,13 +47,13 @@ public class JoinController {
 			model.addAttribute("message", "잘못 된 접근입니다.");
 			return "forward:/join/siteUseAgree.do";
 		}
-		/*
+		
 		//Naver
         String domain = request.getServerName();
         String port = Integer.toString(request.getServerPort());
         String naverAuthUrl = naverLoginService.getAuthorizationUrl(session, domain, port);
         model.addAttribute("naverAuthUrl", naverAuthUrl);
-        */
+        
 		return "join/MemberType";
 	}
 		
@@ -125,7 +126,6 @@ public class JoinController {
 	//회원가입
 	@RequestMapping(value = "/join/insertMember.do")
 	public String insertMember(@ModelAttribute("searchVO") JoinVO vo,  HttpServletRequest request, ModelMap model) throws Exception{
-		/*
 		if(!EgovStringUtil.isEmpty(vo.getLoginType())) {
 			//일반가입을 제외하고는 ID값은 SNS명 + ID값
 			if(!("normal").equals(vo.getLoginType())){
@@ -135,17 +135,17 @@ public class JoinController {
 				vo.setPasswordCnsr("SNS가입자");
 			}
 		}
-		*/
+		
 		if(joinService.duplicateCheck(vo) > 0) {
-			/*
+			//SNS 작업 후
 			if(!("normal").equals(vo.getLoginType())){
 				model.addAttribute("message", "이미 등록 된 SNS계정입니다.");
 			}else {
 				model.addAttribute("message", egovMessageSource.getMessage("fail.duplicate.member")); //이미 사용중인 ID입니다.
 			}
-			*/
 			
-			model.addAttribute("message", egovMessageSource.getMessage("fail.duplicate.member")); //이미 사용중인 ID입니다.
+			//SNS 작업 전
+			//model.addAttribute("message", egovMessageSource.getMessage("fail.duplicate.member")); //이미 사용중인 ID입니다.
 			
 			return "forward:/login/login.do";
 		}else {
