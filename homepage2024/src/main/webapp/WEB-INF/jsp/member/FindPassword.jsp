@@ -17,7 +17,7 @@
 <div class="bg-area change_box" >
     <form id="frm" name="frm" action="/member/findPasswordRegist.do" method="post" onsubmit="return checkForm(this)">
         <fieldset>
-            <legend>아이디찾기 폼</legend>
+            <legend>비밀번호찾기 폼</legend>
             <div class="change_inp">
                 <div>
                     <label for="userNm">회원명</label>
