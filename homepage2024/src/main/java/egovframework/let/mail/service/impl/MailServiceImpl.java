@@ -41,7 +41,7 @@ public class MailServiceImpl extends EgovAbstractServiceImpl implements MailServ
 			props.put("mail.smtp.ssl.trust", smtpHost);//SSL 신뢰여부
 			props.put("mail.smtp.starttls.required", true);//TLS 보호 연결을 활성화하는 데 사용
 			props.put("mail.smtp.ssl.protocols", "TLSv1.2");//SSL 버전
-			props.put("mail.smtp.quit-wait", "false");
+			props.put("mail.smtp.quit-wait", "false");//서버가 연결을 올바르게 종료했다는 응답을 확인
 			props.put("mail.smtp.socketFactory.port", port);
 			props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory"); //SSL 통신에 사용할 소켓통신 클래스
 			props.put("mail.smtp.socketFactory.fallback", "false");

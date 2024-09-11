@@ -66,6 +66,14 @@
 					<li>
 						<a href="/board/selectList.do?boardType=IMAGE">이미지 게시판</a>	
 					</li>
+					<c:if test="${USER_INFO.id eq 'admin'}">
+						<li>
+							<a href="/admin/member/memberList.do">회원관리</a>	
+						</li>
+						<li>
+							<a href="/admin/rsv/rsvSelectList.do">예약관리</a>	
+						</li>
+					</c:if>
 				</ul>
 	        </nav>
 	    </div>
