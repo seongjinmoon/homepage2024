@@ -22,7 +22,6 @@
 	        <form name="frm" method="post" action="/admin/member/memberList.do">
 				<fieldset>
 					<legend>검색조건입력폼</legend>
-					<input type="hidden" name="boardType" value="${boardType}"/>
 					<label for="ftext" class="hdn">검색분류선택</label>
 					<select name="searchCondition" id="ftext">
 						<option value="0" <c:if test="${searchVO.searchCondition eq '0'}">selected="selected"</c:if>>회원아이디</option>

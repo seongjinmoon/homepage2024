@@ -44,7 +44,7 @@ public class MemberManageController {
 	
 	//회원목록
 	@RequestMapping(value = "/admin/member/memberList.do")
-	public String memberList(@ModelAttribute("searchVO") MemberVO vo,  HttpServletRequest request, ModelMap model, HttpSession session) throws Exception{
+	public String memberList(@ModelAttribute("searchVO") MemberVO vo,  HttpServletRequest request, ModelMap model) throws Exception{
 		LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
 		if(!"admin".equals(user.getId())) {
 			return "redirect:/";
@@ -67,7 +67,6 @@ public class MemberManageController {
 		
 		paginationInfo.setTotalRecordCount(totCnt);
 		model.addAttribute("paginationInfo", paginationInfo);
-		
 		
 		return "/admin/member/MemberList";
 	}

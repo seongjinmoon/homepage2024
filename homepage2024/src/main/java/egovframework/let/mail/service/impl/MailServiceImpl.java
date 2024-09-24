@@ -62,6 +62,7 @@ public class MailServiceImpl extends EgovAbstractServiceImpl implements MailServ
 	
 	//메일보내기
 	public void sendMail(Session session, String title, String content, String receiver) throws Exception{
+		//Message : javax.mail.Message
 		Message msg = new MimeMessage(session);
 		
 		try {
