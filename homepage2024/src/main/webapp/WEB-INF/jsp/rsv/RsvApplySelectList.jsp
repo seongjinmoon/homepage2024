@@ -5,20 +5,9 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Language" content="ko" >
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-<title>한국폴리텍 예약관리</title>
-<!-- BBS Style -->
-<link href="/asset/BBSTMP_0000000000001/style.css" rel="stylesheet" />
-<!-- 공통 Style -->
-<link href="/asset/LYTTMP_0000000000000/style.css" rel="stylesheet" />
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-</head>
-<body>
+<c:import url="/template/header.do" charEncoding="utf-8">
+	<c:param name="title" value="예약"/>
+</c:import>
 
 <%-- 기본 URL --%>
 <c:url var="_BASE_PARAM" value="">
@@ -131,5 +120,4 @@ $(document).ready(function(){
 });
 </script>
 
-</body>
-</html>
+<c:import url="/template/footer.do" charEncoding="utf-8"/>

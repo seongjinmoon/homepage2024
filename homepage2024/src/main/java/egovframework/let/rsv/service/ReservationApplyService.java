@@ -9,7 +9,7 @@ import egovframework.com.cmm.service.FileVO;
 
 
 public interface ReservationApplyService {
-	/*
+	
 	//예약가능여부 확인
 	public ReservationApplyVO rsvCheck(ReservationApplyVO vo) throws Exception;
 		
@@ -33,7 +33,7 @@ public interface ReservationApplyService {
 	
 	//예약자 승인처리
 	public void updateReservationConfirm(ReservationApplyVO vo) throws Exception;
-	
+	/*
 	//예약자 엑셀 업로드
 	public Map<String, Object> excelUpload(FileVO file, ReservationApplyVO vo) throws Exception;
 	*/
