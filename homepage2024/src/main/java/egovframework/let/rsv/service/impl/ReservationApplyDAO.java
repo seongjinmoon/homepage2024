@@ -12,8 +12,8 @@ import egovframework.let.rsv.service.ReservationApplyVO;
 public class ReservationApplyDAO extends EgovAbstractMapper {
     
     //예약자 등록하기
-  	void insertReservationApply(ReservationApplyVO vo) throws Exception{
-  		insert("reservationApplyDAO.insertReservationApply", vo);
+  	int insertReservationApply(ReservationApplyVO vo) throws Exception{
+  		return insert("reservationApplyDAO.insertReservationApply", vo);
   	}
   	
   	//기존 신청여부

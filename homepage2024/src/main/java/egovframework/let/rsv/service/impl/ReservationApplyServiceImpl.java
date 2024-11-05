@@ -87,7 +87,14 @@ public class ReservationApplyServiceImpl extends EgovAbstractServiceImpl impleme
   			}else {
   				String id = idgenService.getNextStringId();
   				vo.setReqstId(id);
-  				reservationApplyDAO.insertReservationApply(vo);
+  				
+  				//최대신청가능인원 체크
+  				vo.setMaxAplyCnt(result.getMaxAplyCnt());
+  				int cnt = reservationApplyDAO.insertReservationApply(vo);
+  				if(cnt == 0) {
+  					vo.setErrorCode("ERROR-R1");
+  		  			vo.setMessage("마감 되었습니다.");
+  				}
   			}
   		}
   		

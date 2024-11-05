@@ -62,12 +62,12 @@ public class ReservationAdminApplyController {
 		
 		List<EgovMap> resultList = reservationApplyService.selectReservationApplyList(searchVO);
 		model.addAttribute("resultList", resultList);
-		
+		/*
 		//엑셀 다운로드
 		if("Y".equals(searchVO.getExcelAt())) {
 			return "admin/rsv/RsvApplySelectListExcel";
 		}
-		
+		*/
 		return "admin/rsv/RsvApplySelectList";
 	}
 	
