@@ -178,7 +178,7 @@
 			WHERE RESVE_ID = #{resveId}
 				AND CONFM_SE_CODE = 'O'
 				AND USE_AT = 'Y'
-			) <= #{maxAplyCnt}
+			) < #{maxAplyCnt}
 		]]>
 	</insert>
 	
