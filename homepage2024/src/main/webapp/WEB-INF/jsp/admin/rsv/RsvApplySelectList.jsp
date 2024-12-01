@@ -25,7 +25,6 @@
 				<div class="total">
 					총 예약 수 
 					<strong><c:out value="${fn:length(resultList)}"/></strong>건
-					<%-- 
 					<c:url var="excelUrl" value="/admin/rsv/selectApplyList.do">
 						<c:param name="resveId" value="${param.resveId}"/>
 						<c:param name="excelAt" value="Y"/>
@@ -36,7 +35,6 @@
 						<c:param name="resveId" value="${param.resveId}"/>
 					</c:url>
 					<a href="${excelUrl}" class="btn">JAVA 엑셀 다운로드</a>
-					 --%>
 				</div>	
 		        <div class="bss_list">
 		            <table class="list_table">
@@ -123,48 +121,6 @@ $(".btn-del").click(function(){
 		return false;
 	}
 });
-/*
-$(document).on('click','#excelReg',function(e){
-	if($('#registerExcelFile').val()==''){
-		alert('파일을 등록해주세요.');
-		return false;
-	}
-	
-	var form = new FormData($('#excelForm')[0]);
-	var url = $('#excelForm').attr('action');
-	
-    $.ajax({
-        url:url,
-        type:'POST',
-        data:form,
-        async:false,
-        cache:false,
-        contentType:false,
-        processData:false,
-        dataType:'json'
-    	,success:function(result) {
-    		var message = "";
-    	
-			if(result.success) {
-				$("#excel").hide();
-				window.location.reload();
-     	   	} else {
-     	   		//alert(result.message);
-     	   		for(i = 0; i < result.data.length; i++){
-     	   			if(i != 0){
-     	   				message += "\n";
-     	   			}
-     	   			message += result.data[i].userId + " : " + result.data[i].message;
-     	   		}
-     	   		alert(message);
-     	   		window.location.reload();
-     	 	}
-		}
-	});
-    
-    return false;
-});
-*/
 </script>
 
 <c:import url="/template/footer.do" charEncoding="utf-8"/>
